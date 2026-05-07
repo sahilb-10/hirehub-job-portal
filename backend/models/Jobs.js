@@ -20,7 +20,7 @@ const jobSchema = new mongoose.Schema({
     salary:{
         type: Number,
         required: true,
-    }
+    },
 });
 
 const Job = mongoose.model("Job", jobSchema);
