@@ -10,3 +10,7 @@ const createJob = async (req, res) => {
         });
     }
 };
+
+module.exports = {
+    createJob,
+};
