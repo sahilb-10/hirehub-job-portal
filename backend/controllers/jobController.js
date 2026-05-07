@@ -5,6 +5,8 @@ const createJob = async (req, res) => {
         const job = await Job.create(req.body);
         res.status(201).json(job);
     }catch(error){
-
+        res.status(500).json({
+            message: error.message,
+        });
     }
 };
