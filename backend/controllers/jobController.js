@@ -12,7 +12,11 @@ const createJob = async (req, res) => {
 };
 
 const getJobs = async (req, res) => {
-    
+    try{
+        const jobs = await Job.find();
+    }catch(error){
+
+    }
 };
 
 module.exports = {
