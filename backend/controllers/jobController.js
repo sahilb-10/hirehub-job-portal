@@ -25,11 +25,15 @@ const getJobs = async (req, res) => {
 const getJobById = async(req, res) =>{
     try{
         const job = await Job.findById(req.params.id);
+        res.status(200).json(job);
     }catch(error){
-
+        res.status(500).json({
+            message: error.message,
+        });
     }
 };
 module.exports = {
     createJob,
     getJobs,
+    getJobById,
 };
