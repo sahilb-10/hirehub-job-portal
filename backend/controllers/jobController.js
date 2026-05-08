@@ -23,7 +23,11 @@ const getJobs = async (req, res) => {
 };
 
 const getJobById = async(req, res) =>{
-    
+    try{
+        const job = await Job.findById(req.params.id);
+    }catch(error){
+
+    }
 };
 module.exports = {
     createJob,
