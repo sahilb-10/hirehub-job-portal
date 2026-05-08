@@ -22,6 +22,9 @@ const getJobs = async (req, res) => {
     }
 };
 
+const getJobById = async(req, res) =>{
+    
+};
 module.exports = {
     createJob,
     getJobs,
