@@ -20,6 +20,20 @@ const registerUser = async (req, res) =>{
     }
 };
 
+const loginUser = async (req, res) =>{
+    try{
+        const {email, password} = req.body;
+        const user = await user.findOne({email});
+        if (!user) {
+            return res.status(404).json({
+                message: "User not Found",
+            });
+        }
+    }catch(error){
+
+    }
+};
+
 module.exports = {
     registerUser,
 };
