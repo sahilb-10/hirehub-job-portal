@@ -41,11 +41,18 @@ const loginUser = async (req, res) =>{
             process.env.JWT_SECRET,
             {expiresIn: "1d"}
         );
+        res.status(200).json({
+            message: "Login Succesful",
+            token,
+        });
     }catch(error){
-
+        res.status(500).json({
+            message: error.message,
+        });
     }
 };
 
 module.exports = {
     registerUser,
+    loginUser,
 };
