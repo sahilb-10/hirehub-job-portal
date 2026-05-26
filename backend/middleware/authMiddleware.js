@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const project = async (req, res, next) =>{
+const protect = async (req, res, next) =>{
     try{
         const authHeader = req.headers.authorization;
         if (!authHeader){
@@ -17,7 +17,9 @@ const project = async (req, res, next) =>{
         next();
     }catch(error){
         res.status(401).json({
-            message: "Invalid token";
+            message: "Invalid token",
         });
     }
 };
+
+module.exports = protect;
